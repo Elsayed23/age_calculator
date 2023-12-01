@@ -1,0 +1,232 @@
+$colorPurple: hsl(259, 100%, 65%);
+$colorLightRed: hsl(0, 100%, 67%);
+$colorWhite: hsl(0, 0%, 100%);
+$colorOffWhite: hsl(0, 0%, 94%);
+$colorLightGrey: hsl(0, 0%, 86%);
+$colorSmokeyGrey: hsl(0, 1%, 44%);
+$colorOffBlack: hsl(0, 0%, 8%);
+
+$widthDesktop: 1440px;
+$widthMobile: 375px;
+
+
+
+.calculator {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #040404;
+  font-size: 32px;
+  line-height: 1.2;
+
+
+  background-color: $colorLightGrey;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 30px;
+
+  @media (max-width: 520px) {
+    padding: 30px 15px;
+  }
+
+  &__container {
+    background-color: $colorWhite;
+    width: 60%;
+    max-width: 650px;
+    min-width: 470px;
+    // height: 55%;
+    border-radius: 35px;
+    border-bottom-right-radius: 175px;
+    padding: 40px;
+    margin: 0 auto;
+
+    @media (max-width: 520px) {
+      width: 100%;
+      min-width: 300px;
+      padding: 40px 20px;
+    }
+  }
+
+  &__user-input {
+    max-width: 100%;
+    color: $colorSmokeyGrey;
+    // display: flex;
+    // align-items: baseline;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $colorLightGrey;
+    position: relative;
+    margin-bottom: 50px;
+
+    @media (max-width: 420) {
+      padding-bottom: 50px;
+      margin-bottom: 35px;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+  }
+
+  &__user-input-btn {
+    position: absolute;
+    right: 0;
+    bottom: -33px;
+    width: 66px;
+    height: 66px;
+    background-color: $colorPurple;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.15s;
+    transition: background-color 0.4s;
+    scale: 1;
+
+    &:active {
+      scale: 0.95;
+      filter: drop-shadow(0 0 0.3rem $colorSmokeyGrey);
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        background-color: $colorOffBlack;
+      }
+    }
+
+    &::after {
+      content: '';
+      background-image: url(../assets/images/icon-arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: inline-block;
+      width: 55%;
+      height: 55%;
+    }
+
+    @media (max-width: 520px) {
+      right: 50%;
+      margin-right: -29px;
+      bottom: -29px;
+      width: 58px;
+      height: 58px;
+    }
+
+    @media (max-width: 380px) {
+      right: 50%;
+      margin-right: -26px;
+      bottom: -26px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &__input-blok {
+
+    // flex: 0 1 90px;
+    &:not(:last-child) {
+      // margin-right: 30px;
+    }
+  }
+
+  &__output {}
+}
+
+.input-blok {
+
+  @media (max-width: 380px) {
+    min-width: 70px;
+  }
+
+  &__text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 100%;
+    border: 1px solid $colorLightGrey;
+    border-radius: 5px;
+    font-weight: 700;
+    padding-left: 15px;
+    caret-color: $colorPurple;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $colorPurple;
+    }
+
+    margin-bottom: 6px;
+
+    @media (max-width: 380px) {
+      font-size: 1.35rem;
+      padding-left: 10px;
+    }
+  }
+
+  &__text-error {
+    font-size: 0.6rem;
+    color: $colorLightRed;
+    font-weight: 400;
+    font-style: italic;
+    position: absolute;
+    opacity: 0;
+
+    @media (max-width: 380px) {
+      max-width: 90px;
+    }
+  }
+
+  .error & {
+    &__text {
+      color: $colorLightRed;
+    }
+
+    &__input {
+      border: 1px solid $colorLightRed;
+
+      &:focus {
+        border: 1px solid $colorLightRed;
+      }
+    }
+
+    &__text-error {
+      opacity: 1;
+    }
+
+  }
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 4rem;
+  font-style: italic;
+
+  @media (max-width: 520px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 2.7rem;
+  }
+
+  &__text {
+    span {
+      color: $colorPurple;
+      margin-right: 8px;
+    }
+  }
+}
+
+.attribution {
+  background-color: $colorLightGrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

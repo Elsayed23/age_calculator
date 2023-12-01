@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Age calculator</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="calculator__container">
+    <div class="calculator__user-input">
+      <div class="calculator__input-blok input-blok">
+        <p class="input-blok__text">Day</p>
+        <input class="input-blok__input input-days" type="number" placeholder="DD" min="1">
+        <p class="input-blok__text-error">text error</p>
+      </div>
+      <div class="calculator__input-blok input-blok">
+        <p class="input-blok__text">Month</p>
+        <input class="input-blok__input input-months" type="number" placeholder="MM" min="1">
+        <p class="input-blok__text-error">text error</p>
+      </div>
+      <div class="calculator__input-blok input-blok">
+        <p class="input-blok__text">Year</p>
+        <input class="input-blok__input input-years" type="number" placeholder="YYYY" min="1">
+        <p class="input-blok__text-error">text error</p>
+      </div>
+      <button class="calculator__user-input-btn"></button>
+    </div>
+    <div class="calculator__output output">
+      <div class="flex">
+        <div class="output__text output-years"><span>- -</span>years</div>
+        <div class="output__text output-months">
+          <span>- -</span>months
+        </div>
+        <div class="output__text output-days">
+          <span>- -</span>days
+        </div>
+      </div>
+      <div class="output__text output-months-inMonth"><span>- -</span>In months</div>
+      <div class="output__text output-days-inDay"><span>- -</span>In days</div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

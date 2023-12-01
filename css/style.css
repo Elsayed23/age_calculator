@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #040404;
+  font-size: 32px;
+  line-height: 1.2;
+  background-color: hsl(0, 0%, 86%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 520px) {
+  .calculator {
+    padding: 30px 15px;
+  }
+}
+
+.calculator__container {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 650px;
+  border-radius: 35px;
+  border-bottom-right-radius: 175px;
+  padding: 40px;
+}
+
+@media (max-width: 520px) {
+  .calculator__container {
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+
+.calculator__user-input {
+  max-width: 100%;
+  color: hsl(0, 1%, 44%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
+  position: relative;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 520px) {
+  .calculator__user-input {
+    padding-bottom: 50px;
+    margin-bottom: 35px;
+  }
+}
+
+.calculator__user-input-btn {
+  position: absolute;
+  right: 0;
+  bottom: -33px;
+  width: 66px;
+  height: 66px;
+  background-color: hsl(259, 100%, 65%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s;
+  transition: background-color 0.4s;
+  scale: 1;
+}
+
+.calculator__user-input-btn:active {
+  scale: 0.95;
+  filter: drop-shadow(0 0 0.3rem hsl(0, 1%, 44%));
+}
+
+@media (hover: hover) {
+  .calculator__user-input-btn:hover {
+    background-color: hsl(0, 0%, 8%);
+  }
+}
+
+.calculator__user-input-btn::after {
+  content: "";
+  background-image: url(../assets/images/icon-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 55%;
+  height: 55%;
+}
+
+@media (max-width: 520px) {
+  .calculator__user-input-btn {
+    right: 50%;
+    margin-right: -29px;
+    bottom: -29px;
+    width: 58px;
+    height: 58px;
+  }
+}
+
+@media (max-width: 380px) {
+  .calculator__user-input-btn {
+    right: 50%;
+    margin-right: -26px;
+    bottom: -26px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.input-blok {
+  min-width: 90px;
+}
+
+@media (max-width: 380px) {
+  .input-blok {
+    min-width: 70px;
+  }
+}
+
+.input-blok__text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.input-blok__input {
+  font-size: 1.5rem;
+  height: 2.5rem;
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 5px;
+  font-weight: 700;
+  padding-left: 15px;
+  caret-color: hsl(259, 100%, 65%);
+  margin-bottom: 6px;
+}
+
+.input-blok__input:focus {
+  outline: none;
+  border: 1px solid hsl(259, 100%, 65%);
+}
+
+@media (max-width: 380px) {
+  .input-blok__input {
+    font-size: 1.35rem;
+    padding-left: 10px;
+  }
+}
+
+.input-blok__text-error {
+  font-size: 0.6rem;
+  color: hsl(0, 100%, 67%);
+  font-weight: 400;
+  font-style: italic;
+  position: absolute;
+  opacity: 0;
+}
+
+@media (max-width: 380px) {
+  .input-blok__text-error {
+    max-width: 90px;
+  }
+}
+
+.error .input-blok__text {
+  color: hsl(0, 100%, 67%);
+}
+
+.error .input-blok__input {
+  border: 1px solid hsl(0, 100%, 67%);
+}
+
+.error .input-blok__input:focus {
+  border: 1px solid hsl(0, 100%, 67%);
+}
+
+.error .input-blok__text-error {
+  opacity: 1;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  gap: 15px;
+  font-size: 3rem;
+  font-style: italic;
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  border: solid 1px #333;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.output-years {
+  font-size: 3rem;
+}
+
+@media (max-width: 520px) {
+  .output {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .output {
+    font-size: 2rem;
+  }
+}
+
+.output__text span {
+  color: hsl(259, 100%, 65%);
+  margin-right: 8px;
+}
+
+.attribution {
+  background-color: hsl(0, 0%, 86%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
